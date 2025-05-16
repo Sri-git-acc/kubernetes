@@ -12,11 +12,11 @@ metadata:
   - protocol: TCP
     port: 80
     targetPort: 80
-    nodeport: 30007
+    nodePort: 30007
 ---
 
-kind: pod
-apiversion: v1
+kind: Pod
+apiVersion: v1
 metadata: 
   name: podlb1
   labels:
