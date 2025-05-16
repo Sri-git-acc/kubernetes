@@ -10,4 +10,4 @@ spec:
     - configMapRef:
         name: configmap
     - secretRef:
-        name: secrets
+        name: secret
