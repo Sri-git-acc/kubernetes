@@ -9,5 +9,5 @@ spec:
     envFrom:
     - configMapRef:
         name: configmap
-    # - secretRef:
-    #     name: secret
+    - secretRef:
+        name: secret
