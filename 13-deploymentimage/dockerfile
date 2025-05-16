@@ -1,0 +1,3 @@
+FROM nginx
+RUN rm -rf /usr/share/nginx/htlp/index.html
+COPY index.html /usr/share/nginx/htlp/index.html

@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: Service
+  name: service
 spec:
   selector: #lables of the pod are used as selectors
     project: expense

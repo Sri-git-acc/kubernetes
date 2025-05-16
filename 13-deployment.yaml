@@ -22,3 +22,19 @@ spec:
         image: nginx
         ports:
         - containerPort: 80
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: test2
+  type: LoadBalancer
+  selector:
+    project: expense
+    environment: dev
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+    nodeport: 30007
