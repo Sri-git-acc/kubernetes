@@ -18,7 +18,7 @@ spec:
 ---
 
 kind: pod
-apiversion: v1
+apiVersion: v1
 metadata: 
   name: podnp1
   labels:
