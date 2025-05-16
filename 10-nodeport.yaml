@@ -1,0 +1,32 @@
+kind: Nodeport
+apiVersion: v1
+metadata:
+  name: nodeport
+spec:
+  type: NodePort
+  selector:
+    project: expense
+    component: backend
+    environment: dev
+    version: np1
+  ports: 
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+    nodeport: 30007
+
+---
+
+kind: pod
+apiversion: v1
+metadata: 
+  name: podnp1
+  labels:
+    project: expense
+    component: backend 
+    environment: dev
+    version: np1
+spec:
+  containers:
+  - name: nginx
+    image: nginx
