@@ -8,10 +8,25 @@ spec:
   containers:
   - name: nginx
     image: nginx
-    volumeMount:
+    volumeMounts:
     - name: persistent-storage
       mountPath: /usr/share/nginx/html
   volumes:
   - name: persistent-storage
     persistentVolumeClaim:
       claimName: ebs-static-claim
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: ebs-static
+spec:
+  type: LoadBalancer
+  selector: # labels are used as selectors
+    purpose: "ebs-static-demo"
+  ports:
+  - protocol: TCP
+    port: 80 # service port
+    targetPort: 80
+    nodePort: 30007
