@@ -1,0 +1,17 @@
+kind: pod
+apiVersion: v1
+metadata:
+  name: ebs-static-pod
+spec: 
+  nodeSelector:
+  topology.kubernetes.io/zone: us-east-1d #
+  containers:
+  - name: nginx
+    image: nginx
+    volumeMount:
+    - name: persistent-storage
+      mountPath: /usr/share/nginx/html
+  volumes:
+  - name: persistent-storage
+    persistentVolumeClaim:
+      claimName: ebs-static-claim
