@@ -2,6 +2,8 @@ kind: Pod
 apiVersion: v1
 metadata:
   name: ebs-static-pod
+  labels: 
+    purpose: "ebs-static-demo"
 spec: 
   nodeSelector:
     topology.kubernetes.io/zone: us-east-1d #
