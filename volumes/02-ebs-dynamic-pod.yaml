@@ -27,7 +27,6 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    labels:
       purpose: "ebs-dynamic-demo"
   ports:
   - protocol: TCP
