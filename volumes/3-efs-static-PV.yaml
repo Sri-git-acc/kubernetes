@@ -1,0 +1,15 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: efs-static-pv
+spec: 
+  accessMode:
+  - ReadWriteOnce
+  capacity:
+    storage: 20Gi
+  volumeMode: Filesystem
+  storageClassName: ""
+  persistentVolumeClaimPolicy: Retain
+  csi:
+    driver: efs.csi.aws.com
+    volumeHandle: #

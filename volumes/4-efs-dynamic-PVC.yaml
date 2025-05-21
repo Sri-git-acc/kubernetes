@@ -1,0 +1,12 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata: 
+  name: efs-dynamic-pvc
+spec:
+  storageClassName: "efs-dynamic-sc"
+  accessMode:
+  - ReadWriteOnce
+  resources:
+    requests: 
+      storage: 6Gi
+  

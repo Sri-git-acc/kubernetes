@@ -1,0 +1,33 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: efs-dynamic-pod
+  labels:
+    purpose: "efs-dynamic-demo"
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    volumeMounts:
+    - name: persistent-storage
+    mountPath: /usr/share/nginx/html
+  volumes:
+  - name: persistent-storage
+    persistentVolumeClaim:
+      claimName: efs-dynamic-pvc
+  
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: efs-dynamic-service
+spec:
+  type: LoadBalancer
+  selector:
+    purpose: "efs-dynamic-demo"
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+    nodePort: 30007
