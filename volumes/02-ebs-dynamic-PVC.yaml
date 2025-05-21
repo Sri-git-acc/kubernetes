@@ -4,7 +4,7 @@ metadata:
   name: ebs-dynamic-pvc
 spec: 
   storageClassName: "ebs-dynamic-sc"
-  accessMode:
+  accessModes:
   - ReadWriteOnce
   resources:
     requests:

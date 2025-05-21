@@ -4,7 +4,7 @@ metadata:
   name: efs-dynamic-pvc
 spec:
   storageClassName: "efs-dynamic-sc"
-  accessMode:
+  accessModes:
   - ReadWriteOnce
   resources:
     requests: 
